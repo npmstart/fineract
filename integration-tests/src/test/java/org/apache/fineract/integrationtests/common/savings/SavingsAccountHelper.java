@@ -928,4 +928,17 @@ public class SavingsAccountHelper {
                 updateGsimJSON(clientID.toString(), groupID.toString(), productID.toString()), "");
     }
 
+    public String retrieveAllSavingsAccountsWithBirthday(final Integer birthdayMonth, final Integer birthdayDay) {
+        LOG.info("--------------------------------- RETRIEVING ALL SAVINGS ACCOUNTS WITH BIRTHDAY FILTER -------------------------------");
+        final String GET_SAVINGS_WITH_BIRTHDAY_URL = SAVINGS_ACCOUNT_URL + "?" + Utils.TENANT_IDENTIFIER 
+                + "&birthdayMonth=" + birthdayMonth + "&birthdayDay=" + birthdayDay;
+        return Utils.performServerGet(requestSpec, responseSpec, GET_SAVINGS_WITH_BIRTHDAY_URL);
+    }
+
+    public String retrieveAllSavingsAccounts() {
+        LOG.info("--------------------------------- RETRIEVING ALL SAVINGS ACCOUNTS -------------------------------");
+        final String GET_SAVINGS_URL = SAVINGS_ACCOUNT_URL + "?" + Utils.TENANT_IDENTIFIER;
+        return Utils.performServerGet(requestSpec, responseSpec, GET_SAVINGS_URL);
+    }
+
 }
