@@ -18,7 +18,7 @@ jobs:
           java-version: '17'
           distribution: 'zulu'
           cache: gradle
-      - uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8 # tag=v3
+      - uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # tag=v3
         with:
           node-version: 16
       - name: Congfigure vega-cli
